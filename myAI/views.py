@@ -107,7 +107,7 @@ def login(request):
 
 client = OpenAI(api_key='Enter Your API Key')
 
-# openai_api_key = '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'
+# openai_api_key = 'enter your api key'
 # openai.api_key = openai_api_key
 
 
