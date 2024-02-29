@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    {% block styles %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+            <!-- Container wrapper -->
+            <div class="container">
+            <!-- Navbar brand -->
+            <a class="navbar-brand me-2" href="chat.html">
+                <img
+                src="https://tse3.mm.bing.net/th?id=OIP.-oFjXc9VnPDkamvEg9WnzQHaHa&pid=Api&P=0&h=220"
+                height="30"
+                alt="MDB Logo"
+                loading="lazy"
+                style="margin-top: -1px;"
+                />
+            </a>
+        
+            <!-- Toggle button -->
+            <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarButtonsExample"
+                aria-controls="navbarButtonsExample"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+        
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                <!-- Left links -->
+                
+                <!-- Left links -->
+        
+                <div class="d-flex align-items-center">
+                {% if user.is_authenticated %}
+                <button data-mdb-ripple-init type="submit" class="btn btn-dark me-3">
+                    <a href="/logout">Logout</a>
+                </button>
+                {% else %}
+                <button data-mdb-ripple-init type="submit" class="btn btn-link px-3 me-2">
+                    <a href="login.html">LogIn</a>
+                </button>
+                <button data-mdb-ripple-init type="submit" class="btn btn-dark me-3">
+                    <a href="register.html">Sign up for free</a>
+                </button>
+                {% endif %}
+                
+                <!-- <a
+                    data-mdb-ripple-init
+                    class="btn btn-dark px-3"
+                    href="https://github.com/mdbootstrap/mdb-ui-kit"
+                    role="button"
+                    ><i class="fab fa-github"></i
+                ></a> -->
+                </div>
+            </div>
+            <!-- Collapsible wrapper -->
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+
+
+    {% block content %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
