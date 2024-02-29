@@ -105,7 +105,7 @@ def login(request):
     else:
         return render(request, 'login.html')
 
-client = OpenAI(api_key='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')
+client = OpenAI(api_key='Enter Your API Key')
 
 # openai_api_key = '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'
 # openai.api_key = openai_api_key
